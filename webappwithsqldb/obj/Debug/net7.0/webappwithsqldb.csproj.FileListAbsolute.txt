@@ -36,3 +36,10 @@ D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\obj\Debug\net
 D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\obj\Debug\net7.0\webappwithsqldb.pdb
 D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\obj\Debug\net7.0\webappwithsqldb.genruntimeconfig.cache
 D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\obj\Debug\net7.0\ref\webappwithsqldb.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\Azure.Core.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\Azure.Data.AppConfiguration.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\Azure.Messaging.EventGrid.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\Azure.Security.KeyVault.Secrets.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\Microsoft.Extensions.Configuration.AzureAppConfiguration.dll
+D:\UserData\z003f28n\AzureLearning\MyAzureSolution\webappwithsqldb\bin\Debug\net7.0\System.Memory.Data.dll
