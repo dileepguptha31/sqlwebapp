@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33801.306
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webappwithsqldb", "webappwithsqldb\webappwithsqldb.csproj", "{8BD703A3-518C-4666-8D7C-50085D66D7BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tempFunction", "tempFunction\tempFunction.csproj", "{B3793D1E-CB70-439F-8C61-734529B07B5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8BD703A3-518C-4666-8D7C-50085D66D7BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BD703A3-518C-4666-8D7C-50085D66D7BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BD703A3-518C-4666-8D7C-50085D66D7BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3793D1E-CB70-439F-8C61-734529B07B5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3793D1E-CB70-439F-8C61-734529B07B5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3793D1E-CB70-439F-8C61-734529B07B5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3793D1E-CB70-439F-8C61-734529B07B5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
