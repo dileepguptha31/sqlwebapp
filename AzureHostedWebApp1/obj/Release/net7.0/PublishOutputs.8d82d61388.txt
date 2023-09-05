@@ -1,7 +1,0 @@
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\AzureHostedWebApp1.exe
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\appsettings.json
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\AzureHostedWebApp1.dll
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\AzureHostedWebApp1.deps.json
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\AzureHostedWebApp1.runtimeconfig.json
-D:\UserData\z003f28n\AzureLearning\MyAzureSolution\AzureHostedWebApp1\obj\Release\net7.0\PubTmp\Out\AzureHostedWebApp1.pdb
