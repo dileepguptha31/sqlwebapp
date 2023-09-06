@@ -50,7 +50,7 @@ namespace tempFunction
 
         //private static SqlConnection GetConnection()
         //{
-        //    string connectionString = "Server=tcp:tempsqlserverdileep.database.windows.net;Initial Catalog=tempdatabase;user id=dileep;password=Temp31n@w;";
+        //    string connectionString = "";
         //    return new SqlConnection(connectionString);
         //}
 

@@ -8,10 +8,10 @@ namespace CosmosDBApp
 {
     public class Program
     {
-        static string cosmosDBEndpointUri = "https://dileepcosmosdb.documents.azure.com:443/";
+        //static string cosmosDBEndpointUri = "";
 
-        static string cosmosDBKey =
-            "I7G7RksostOiPClHQzjKwV4jxBQeV5PajWD1eM5P4AmrbOe3uoTVPBeCpHsPgl6htm3vADConddsACDb5Z8iYw==";
+        //static string cosmosDBKey =
+        //    "";
 
         static string databaseName = "appdb";
         static string containerName = "Orders";
@@ -25,90 +25,90 @@ namespace CosmosDBApp
             //AddItem("O3", "Desktop", 75);
             //AddItem("O4", "Laptop", 25);
 
-            CallStoredProcedure();
+            //CallStoredProcedure();
             Console.ReadLine();
         }
 
-        static void CreateDatabase(string databaseName)
-        {
-            CosmosClient cosmosClient;
-            cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
+        //static void CreateDatabase(string databaseName)
+        //{
+        //    CosmosClient cosmosClient;
+        //    cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
 
-            cosmosClient.CreateDatabaseIfNotExistsAsync(databaseName).GetAwaiter().GetResult();
-            Console.WriteLine("Database created");
-        }
+        //    cosmosClient.CreateDatabaseIfNotExistsAsync(databaseName).GetAwaiter().GetResult();
+        //    Console.WriteLine("Database created");
+        //}
 
-        static void CreateContainer(string databaseName, string containerName, string partitionKey)
-        {
-            CosmosClient cosmosClient;
-            cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
+        //static void CreateContainer(string databaseName, string containerName, string partitionKey)
+        //{
+        //    CosmosClient cosmosClient;
+        //    cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
 
-            Database database = cosmosClient.GetDatabase(databaseName);
+        //    Database database = cosmosClient.GetDatabase(databaseName);
 
-            database.CreateContainerIfNotExistsAsync(containerName, partitionKey).GetAwaiter().GetResult();
+        //    database.CreateContainerIfNotExistsAsync(containerName, partitionKey).GetAwaiter().GetResult();
 
-            Console.WriteLine("Container created");
-        }
+        //    Console.WriteLine("Container created");
+        //}
 
-        static void AddItem(string orderId, string category, int quantity)
-        {
-            CosmosClient cosmosClient;
-            cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
+        //static void AddItem(string orderId, string category, int quantity)
+        //{
+        //    CosmosClient cosmosClient;
+        //    cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
 
-            Database database = cosmosClient.GetDatabase(databaseName);
-            Container container = database.GetContainer(containerName);
+        //    Database database = cosmosClient.GetDatabase(databaseName);
+        //    Container container = database.GetContainer(containerName);
 
-            Order order = new Order()
-            {
-                id = Guid.NewGuid().ToString(),
-                orderId = orderId,
-                category = category,
-                quantity = quantity
-            };
+        //    Order order = new Order()
+        //    {
+        //        id = Guid.NewGuid().ToString(),
+        //        orderId = orderId,
+        //        category = category,
+        //        quantity = quantity
+        //    };
 
-            container.CreateItemAsync<Order>(order, new PartitionKey(order.category)).GetAwaiter().GetResult();
+        //    container.CreateItemAsync<Order>(order, new PartitionKey(order.category)).GetAwaiter().GetResult();
 
-            Console.WriteLine("Added item with Order Id {0}", orderId);
-            //Console.WriteLine("Request Units consumed {0}", response.RequestCharge);
+        //    Console.WriteLine("Added item with Order Id {0}", orderId);
+        //    //Console.WriteLine("Request Units consumed {0}", response.RequestCharge);
 
-        }
+        //}
 
-        static void CallStoredProcedure()
-        {
-            CosmosClient cosmosClient;
-            cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
-            Database database = cosmosClient.GetDatabase(databaseName);
-            Container container = database.GetContainer(containerName);
+        //static void CallStoredProcedure()
+        //{
+        //    CosmosClient cosmosClient;
+        //    cosmosClient = new CosmosClient(cosmosDBEndpointUri, cosmosDBKey);
+        //    Database database = cosmosClient.GetDatabase(databaseName);
+        //    Container container = database.GetContainer(containerName);
 
-            dynamic[] orderItems = new dynamic[]
-            {
-                new
-                {
-                    id = Guid.NewGuid().ToString(),
-                    orderId = "01",
-                    category = "Laptop",
-                    quantity = 100
-                },
-                new
-                {
-                    id = Guid.NewGuid().ToString(),
-                    orderId = "02",
-                    category = "Laptop",
-                    quantity = 200
-                },
-                new
-                {
-                    id = Guid.NewGuid().ToString(),
-                    orderId = "03",
-                    category = "Laptop",
-                    quantity = 75
-                },
-            };
-            var result = container.Scripts.ExecuteStoredProcedureAsync<string>("createItems",
-                new PartitionKey("Laptop"), new[] { orderItems }).GetAwaiter().GetResult();
-            Console.WriteLine(result);
+        //    dynamic[] orderItems = new dynamic[]
+        //    {
+        //        new
+        //        {
+        //            id = Guid.NewGuid().ToString(),
+        //            orderId = "01",
+        //            category = "Laptop",
+        //            quantity = 100
+        //        },
+        //        new
+        //        {
+        //            id = Guid.NewGuid().ToString(),
+        //            orderId = "02",
+        //            category = "Laptop",
+        //            quantity = 200
+        //        },
+        //        new
+        //        {
+        //            id = Guid.NewGuid().ToString(),
+        //            orderId = "03",
+        //            category = "Laptop",
+        //            quantity = 75
+        //        },
+        //    };
+        //    var result = container.Scripts.ExecuteStoredProcedureAsync<string>("createItems",
+        //        new PartitionKey("Laptop"), new[] { orderItems }).GetAwaiter().GetResult();
+        //    Console.WriteLine(result);
 
 
-        }
+        //}
     }
 }
