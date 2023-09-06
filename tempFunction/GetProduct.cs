@@ -48,16 +48,16 @@ namespace tempFunction
             //return new OkObjectResult(_product_lst);
         }
 
-        private static SqlConnection GetConnection()
-        {
-            string connectionString = "Server=tcp:tempsqlserverdileep.database.windows.net;Initial Catalog=tempdatabase;user id=dileep;password=Temp31n@w;";
-            return new SqlConnection(connectionString);
-        }
-
         //private static SqlConnection GetConnection()
         //{
-        //    string connection_string = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SQLConnectionString");
-        //    return new SqlConnection(connection_string);
+        //    string connectionString = "Server=tcp:tempsqlserverdileep.database.windows.net;Initial Catalog=tempdatabase;user id=dileep;password=Temp31n@w;";
+        //    return new SqlConnection(connectionString);
         //}
+
+        private static SqlConnection GetConnection()
+        {
+            string connection_string = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SQLConnectionString");
+            return new SqlConnection(connection_string);
+        }
     }
 }

@@ -1,49 +1,22 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
+﻿using System.Text.Json;
 using webappwithsqldb.Models;
 
 namespace webappwithsqldb.Services
 {
+    // This service will interact with our Product data in the SQL database
     public class ProductService : IProductService
     {
-        private readonly IConfiguration _configuration;
-        public ProductService(IConfiguration configuration)
+
+        public async Task<List<Product>> GetProducts()
         {
-            _configuration = configuration;
-        }
+            String FunctionURL = "https://tempazurefunc2.azurewebsites.net/api/GetProduct?code=0h0RHrQ_WdU6gwzxN_fXYy7yWm1nqvU9E3Bc5biWmh4BAzFuZvsNCA==";
 
-        private SqlConnection GetConnection()
-        {
-
-            return new SqlConnection(_configuration["SQLConnection"]);
-        }
-        public List<Product> GetProducts()
-        {
-            List<Product> _product_lst = new List<Product>();
-            string _statement = "SELECT ProductID,ProductName,Quantity from Products";
-            SqlConnection _connection = GetConnection();
-
-            _connection.Open();
-
-            SqlCommand _sqlcommand = new SqlCommand(_statement, _connection);
-
-            using (SqlDataReader _reader = _sqlcommand.ExecuteReader())
+            using (HttpClient _client = new HttpClient())
             {
-                while (_reader.Read())
-                {
-                    Product _product = new Product()
-                    {
-                        ProductID = _reader.GetInt32(0),
-                        ProductName = _reader.GetString(1),
-                        Quantity = _reader.GetInt32(2)
-                    };
-
-                    _product_lst.Add(_product);
-                }
+                HttpResponseMessage _response = await _client.GetAsync(FunctionURL);
+                string _content = await _response.Content.ReadAsStringAsync();
+                return JsonSerializer.Deserialize<List<Product>>(_content);
             }
-            _connection.Close();
-            return _product_lst;
         }
-
     }
 }
